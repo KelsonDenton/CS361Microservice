@@ -1,6 +1,10 @@
 import json
 from time import sleep
 
+"""
+Demonstrates how the functionality can be used with Python.
+"""
+
 # write to JSON file
 dict = {"url": "https://en.wikipedia.org/wiki/Peter_J._Denning", "title": "Education early life"}
 json_obj = json.dumps(dict)
@@ -20,4 +24,4 @@ try:
 finally:
     openfile.close()
 
-print(data)
+print(data)  # display information
