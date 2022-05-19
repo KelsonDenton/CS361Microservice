@@ -11,6 +11,9 @@ import json
 
 
 def get_text_under(url, title_name):
+    """
+    Parameters of url and title_name are used to find information at wikipedia url and under title.
+    """
     # get URL
     page = requests.get(url)
     # scrape webpage
@@ -33,10 +36,11 @@ def get_text_under(url, title_name):
                     return_str += paragraph.get_text()
                     return_str += "\n"
                 return return_str
-    return f'Title {title_name} does not exist'
+    # title was not found on page (error message)
+    return f'Title {title_name} does not exist'  
 
 
-while True:
+while True:  # continuously runs while file is run to read and update wiki.json
     try:
         try:
             with open('wiki.json', 'r') as read_json:  # open json file for reading
